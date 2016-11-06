@@ -1,0 +1,14 @@
+<ul class="tdbid-list">
+    <!-- These are here just to show the structure of the list items -->
+    <!-- List items should get the class `editing` when editing and `completed` when marked as completed -->
+    <li ng-repeat="tdbid in $ctrl.list">
+        <tdbid-item
+            index="$index"
+            description="tdbid.description"
+            completed="tdbid.completed"
+            on-delete="$ctrl.deleteTdbid($event)"
+            on-update="$ctrl.updateTdbid($event)"
+            on-toggle="$ctrl.toggleTdbid($event)">
+        </tdbid-item>
+    </li>
+</ul>

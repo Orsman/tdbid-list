@@ -1,0 +1,20 @@
+<footer class="footer">
+    <!-- This should be `0 items left` by default -->
+    <span class="tdbid-count"><strong>{{$ctrl.itemsLeft}}</strong> items left</span>
+
+    <!-- Remove this if you don't implement routing -->
+    <ul class="filters">
+        <li>
+            <a href ui-sref="tdbid.all" ui-sref-active="selected">All</a>
+        </li>
+        <li>
+            <a href ui-sref="tdbid.active" ui-sref-active="selected">Active</a>
+        </li>
+        <li>
+            <a href ui-sref="tdbid.completed" ui-sref-active="selected">Completed</a>
+        </li>
+    </ul>
+
+    <!-- Hidden if no completed items are left ↓ -->
+    <button class="clear-completed" ng-click="$ctrl.clearCompleted()">Clear completed</button>
+</footer>

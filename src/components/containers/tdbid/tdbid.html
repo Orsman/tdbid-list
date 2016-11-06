@@ -1,0 +1,23 @@
+
+<section class="tdbidapp">
+    <header class="header">
+        <h1>tdbids</h1>
+        <tdbid-form on-submit="$ctrl.addTdbid($event)"></tdbid-form>
+    </header>
+    <!-- This section should be hidden by default and shown when there are tdbids -->
+    <section class="main" ng-if="$ctrl.tdbidList.length > 0">
+        <input class="toggle-all" type="checkbox" ng-click="$ctrl.toggleAllTdbids()">
+        <label for="toggle-all">Mark all as complete</label>
+        <tdbid-list
+            list="$ctrl.tdbidList"
+            on-delete="$ctrl.deleteTdbid($event)"
+            on-update="$ctrl.updateTdbid($event)"
+            on-toggle="$ctrl.toggleTdbid($event)">
+        </tdbid-list>
+    </section>
+    <!-- This footer should hidden by default and shown when there are tdbids -->
+    <tdbid-footer
+        items-left="$ctrl.incompletedItems"
+        on-clear-completed="$ctrl.clearCompleted()">
+    </tdbid-footer>
+</section>
