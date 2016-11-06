@@ -5,9 +5,9 @@
     "main": "webpack.config.js",
     "scripts": {
         "webpack": "webpack",
-        "dev": "SET NODE_ENV=test && webpack-dev-server --hot --inline --progress --colors --content-base src",
-        "build:test": "SET NODE_ENV=test && webpack",
-        "build:live": "SET NODE_ENV=live && webpack --devtool source-map"
+        "dev": "NODE_ENV=test && webpack-dev-server --hot --inline --progress --colors --content-base src",
+        "build:test": "NODE_ENV=test && webpack",
+        "build:live": "NODE_ENV=live && webpack --devtool source-map"
     },
     "author": "Johan Forsman",
     "license": "ISC",
